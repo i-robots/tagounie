@@ -1,0 +1,54 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "experience": "Experiencia",
+    "activities": "Actividades",
+    "location": "Ubicación",
+    "join": "Únete"
+  },
+  "hero": {
+    "title": "Voluntariado en el Sahara marroquí",
+    "subtitle": "Desacelera. Conéctate. Vive como un local.",
+    "paragraph": "Bienvenido a Tagounite, un tranquilo pueblo al borde del desierto del Sahara, donde el tiempo va más despacio y la vida está profundamente conectada con la naturaleza, la comunidad y la tradición.",
+    "cta": "Comienza tu viaje"
+  },
+  "footer": {
+    "title": "Tagounite Sahara",
+    "description": "Intercambio cultural auténtico y vida sostenible en el Sahara marroquí.",
+    "quickLinks": {
+      "home": "Inicio",
+      "experience": "Experiencia",
+      "activities": "Actividades",
+      "location": "Ubicación"
+    },
+    "tags": {
+        "1": "Voluntariado en Marruecos", 
+        "2":"Experiencia en el desierto del Sahara", 
+        "3": "Viajes sostenibles", 
+        "4": "Intercambio cultural"
+    },
+    "copyright": "© 2024 Tagounite Sahara Volunteering Project. Todos los derechos reservados."
+  },
+  "contact": {
+    "title": "Contáctanos",
+    "namePlaceholder": "Tu nombre",
+    "emailPlaceholder": "Tu correo",
+    "messagePlaceholder": "Tu mensaje",
+    "send": "Enviar",
+    "thanks": "¡Gracias por tu mensaje! Nos pondremos en contacto pronto."
+  }
+  ,
+  "experience": {
+    "aboutTitle": "Sobre la experiencia",
+    "aboutParagraph": "Esto no es un destino turístico típico. Este es un lugar para experimentar la vida real del desierto.",
+    "whatYouCanDo": "Qué puedes hacer como voluntario",
+    "activitiesIntro": "Como Worldpacker, tus días son diversos y flexibles. Cada voluntario aporta sus propios talentos — y damos la bienvenida a nuevas ideas.",
+    "uniqueDesert": "Experiencias únicas en el desierto",
+    "lifeInTagounite": "La vida en Tagounite",
+    "experienceTagounite": "Experimenta Tagounite",
+    "locationTitle": "Ubicación – Tagounite, Marruecos",
+    "whoFor": "Para quién es esta experiencia",
+    "joinUs": "Únete",
+    "whatWeDo": "Lo que hacemos"
+  }
+}

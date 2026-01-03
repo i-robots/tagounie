@@ -1,0 +1,54 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "experience": "Expérience",
+    "activities": "Activités",
+    "location": "Localisation",
+    "join": "Rejoignez-nous"
+  },
+  "hero": {
+    "title": "Bénévole dans le Sahara marocain",
+    "subtitle": "Ralentissez. Connectez. Vivez comme un local.",
+    "paragraph": "Bienvenue à Tagounite, un village paisible au bord du désert du Sahara, où le temps ralentit et la vie est profondément liée à la nature, à la communauté et à la tradition.",
+    "cta": "Commencez votre voyage"
+  },
+  "footer": {
+    "title": "Tagounite Sahara",
+    "description": "Échange culturel authentique et vie durable dans le Sahara marocain.",
+    "quickLinks": {
+      "home": "Accueil",
+      "experience": "Expérience",
+      "activities": "Activités",
+      "location": "Localisation"
+    },
+    "tags": {
+        "1": "Bénévolat au Maroc", 
+        "2":"Expérience dans le désert du Sahara", 
+        "3": "Voyage durable", 
+        "4": "Échange culturel"
+    },
+    "copyright": "© 2024 Tagounite Sahara Volunteering Project. Tous droits réservés."
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "namePlaceholder": "Votre nom",
+    "emailPlaceholder": "Votre email",
+    "messagePlaceholder": "Votre message",
+    "send": "Envoyer",
+    "thanks": "Merci pour votre message ! Nous vous contacterons bientôt."
+  }
+  ,
+  "experience": {
+    "aboutTitle": "À propos de l'expérience",
+    "aboutParagraph": "Ce n'est pas une destination touristique typique. C'est un endroit pour vivre la véritable vie du désert.",
+    "whatYouCanDo": "Ce que vous pouvez faire en tant que bénévole",
+    "activitiesIntro": "En tant que Worldpacker, vos journées sont diverses et flexibles. Chaque bénévole apporte ses talents — nous accueillons de nouvelles idées.",
+    "uniqueDesert": "Expériences désertiques uniques",
+    "lifeInTagounite": "La vie à Tagounite",
+    "experienceTagounite": "Vivez Tagounite",
+    "locationTitle": "Emplacement – Tagounite, Maroc",
+    "whoFor": "Pour qui est cette expérience",
+    "joinUs": "Rejoignez-nous",
+    "whatWeDo": "Ce que nous faisons"
+  }
+}

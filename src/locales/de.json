@@ -1,0 +1,54 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "experience": "Erlebnis",
+    "activities": "Aktivitäten",
+    "location": "Ort",
+    "join": "Mach mit"
+  },
+  "hero": {
+    "title": "Freiwilligenarbeit in der marokkanischen Sahara",
+    "subtitle": "Entschleunigen. Verbinden. Wie ein Einheimischer leben.",
+    "paragraph": "Willkommen in Tagounite, einem ruhigen Dorf am Rande der Sahara, wo die Zeit langsamer vergeht und das Leben tief mit Natur, Gemeinschaft und Tradition verbunden ist.",
+    "cta": "Beginne deine Reise"
+  },
+  "footer": {
+    "title": "Tagounite Sahara",
+    "description": "Authentischer kultureller Austausch und nachhaltiges Leben in der marokkanischen Sahara.",
+    "quickLinks": {
+      "home": "Startseite",
+      "experience": "Erlebnis",
+      "activities": "Aktivitäten",
+      "location": "Ort"
+    },
+    "tags": {
+        "1": "Freiwilligenarbeit in Marokko", 
+        "2": "Sahara-Erlebnis", 
+        "3": "Nachhaltiges Reisen", 
+        "4": "Kulturaustausch"
+    },
+    "copyright": "© 2024 Tagounite Sahara Volunteering Project. Alle Rechte vorbehalten."
+  },
+  "contact": {
+    "title": "Kontakt",
+    "namePlaceholder": "Ihr Name",
+    "emailPlaceholder": "Ihre E-Mail",
+    "messagePlaceholder": "Ihre Nachricht",
+    "send": "Nachricht senden",
+    "thanks": "Danke für Ihre Nachricht! Wir werden Sie bald kontaktieren."
+  }
+  ,
+  "experience": {
+    "aboutTitle": "Über das Erlebnis",
+    "aboutParagraph": "Dies ist kein typisches Touristenziel. Dies ist ein Ort, um das wirkliche Wüstenleben zu erleben.",
+    "whatYouCanDo": "Was Sie als Freiwilliger tun können",
+    "activitiesIntro": "Als Worldpacker sind Ihre Tage vielfältig und flexibel. Jeder Freiwillige bringt seine Talente mit — und wir begrüßen neue Ideen.",
+    "uniqueDesert": "Einzigartige Wüsten-Erlebnisse",
+    "lifeInTagounite": "Leben in Tagounite",
+    "experienceTagounite": "Erlebe Tagounite",
+    "locationTitle": "Ort – Tagounite, Marokko",
+    "whoFor": "Für wen ist dieses Erlebnis",
+    "joinUs": "Mach mit",
+    "whatWeDo": "Was wir tun"
+  }
+}

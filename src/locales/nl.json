@@ -1,0 +1,54 @@
+{
+  "nav": {
+    "home": "Home",
+    "experience": "Ervaring",
+    "activities": "Activiteiten",
+    "location": "Locatie",
+    "join": "Doe mee"
+  },
+  "hero": {
+    "title": "Vrijwilligerswerk in de Marokkaanse Sahara",
+    "subtitle": "Versnellen. Verbinden. Leef als een local.",
+    "paragraph": "Welkom in Tagounite, een vredig dorp aan de rand van de Sahara, waar de tijd langzamer gaat en het leven diep verbonden is met natuur, gemeenschap en traditie.",
+    "cta": "Begin je reis"
+  },
+  "footer": {
+    "title": "Tagounite Sahara",
+    "description": "Authentieke culturele uitwisseling en duurzaam leven in de Marokkaanse Sahara.",
+    "quickLinks": {
+      "home": "Home",
+      "experience": "Ervaring",
+      "activities": "Activiteiten",
+      "location": "Locatie"
+    },
+    "tags": {
+        "1": "Vrijwilligerswerk in Marokko", 
+        "2":"Sahara Woestijn Ervaring", 
+        "3": "Duurzaam Reizen", 
+        "4": "Culturele Uitwisseling"
+    },
+    "copyright": "© 2024 Tagounite Sahara Volunteering Project. Alle rechten voorbehouden."
+  },
+  "contact": {
+    "title": "Contact",
+    "namePlaceholder": "Je naam",
+    "emailPlaceholder": "Je e-mail",
+    "messagePlaceholder": "Je bericht",
+    "send": "Verstuur",
+    "thanks": "Bedankt voor je bericht! We nemen snel contact op."
+  }
+  ,
+  "experience": {
+    "aboutTitle": "Over de ervaring",
+    "aboutParagraph": "Dit is geen typische toeristische bestemming. Dit is een plek om het echte woestijnleven te ervaren.",
+    "whatYouCanDo": "Wat je als vrijwilliger kunt doen",
+    "activitiesIntro": "Als Worldpacker zijn je dagen divers en flexibel. Elke vrijwilliger brengt zijn eigen talenten — en we verwelkomen nieuwe ideeën.",
+    "uniqueDesert": "Unieke woestijnervaringen",
+    "lifeInTagounite": "Het leven in Tagounite",
+    "experienceTagounite": "Ervaar Tagounite",
+    "locationTitle": "Locatie – Tagounite, Marokko",
+    "whoFor": "Voor wie is deze ervaring",
+    "joinUs": "Doe mee",
+    "whatWeDo": "Wat we doen"
+  }
+}
