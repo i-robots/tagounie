@@ -1,9 +1,9 @@
 <template>
   <BaseModal :visible="visible" :title="$t('contact.title')" @close="$emit('close')">
     <form class="contact-form" @submit.prevent="submit">
-      <input type="text" :placeholder="$t('contact.namePlaceholder')" required />
-      <input type="email" :placeholder="$t('contact.emailPlaceholder')" required />
-      <textarea :placeholder="$t('contact.messagePlaceholder')" rows="4" required></textarea>
+      <input name="name" type="text" :placeholder="$t('contact.namePlaceholder')" required />
+      <input name="email" type="email" :placeholder="$t('contact.emailPlaceholder')" required />
+      <textarea name="message" :placeholder="$t('contact.messagePlaceholder')" rows="4" required></textarea>
       <button type="submit" class="cta-button">{{ $t('contact.send') }}</button>
     </form>
   </BaseModal>
@@ -18,9 +18,63 @@ const props = defineProps({ visible: { type: Boolean, default: false } })
 const emit = defineEmits(['close'])
 const { t } = useI18n()
 
-const submit = () => {
-  alert(t('contact.thanks'))
-  setTimeout(() => emit('close'), 120)
+const submit = async (e) => {
+  // validate required fields before building FormData
+  const form = e.target
+  const nameInput = form.querySelector('[name="name"]')
+  const emailInput = form.querySelector('[name="email"]')
+  const name = (nameInput?.value || '').trim()
+  const email = (emailInput?.value || '').trim()
+
+  // clear previous custom validity messages
+  nameInput?.setCustomValidity('')
+  emailInput?.setCustomValidity('')
+
+  if (!name) {
+    const msg = t('contact.nameRequired') || 'Please provide your name'
+    nameInput?.setCustomValidity(msg)
+    nameInput?.reportValidity()
+    nameInput?.focus()
+    return
+  }
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  if (!email || !emailRegex.test(email)) {
+    const msg = t('contact.emailInvalid') || 'Please provide a valid email'
+    emailInput?.setCustomValidity(msg)
+    emailInput?.reportValidity()
+    emailInput?.focus()
+    return
+  }
+
+  // build FormData from the submitted form
+  const formData = new FormData(form)
+
+  try {
+    const res = await fetch('/contact.php', { method: 'POST', body: formData })
+    const text = await res.text()
+
+    // If the PHP returns the success block (contains .w-form-done), show it inline
+    if (res.ok && text.includes('w-form-done')) {
+      // replace form contents with server response
+      form.innerHTML = text
+      setTimeout(() => emit('close'), 1200)
+      return
+    }
+
+    // Otherwise try to show a failure message parsed from the response
+    try {
+      const parser = new DOMParser()
+      const doc = parser.parseFromString(text, 'text/html')
+      const fail = doc.querySelector('.w-form-fail')
+      const msg = fail ? fail.textContent.trim() : (doc.body.textContent || '').trim()
+      console.warn('Contact form submission failed:', msg)
+    } catch (parseErr) {
+      console.warn(t('contact.error') || 'Submission failed')
+    }
+  } catch (err) {
+    console.warn(err)
+  }
 }
 </script>
 

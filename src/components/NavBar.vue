@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <div class="logo serif">Tagounite Sahara</div>
+    <div class="logo serif" tabindex="0" @click="scrollTop" @keydown.enter="scrollTop">Tagounite Sahara</div>
     <button class="mobile-menu-btn" @click="menuOpen = !menuOpen">☰</button>
     <ul class="nav-links" :class="{ 'active': menuOpen }">
       <li><a href="#home" @click="closeMenu">{{ $t('nav.home') }}</a></li>
@@ -18,8 +18,12 @@ import { ref } from 'vue'
 
 const menuOpen = ref(false)
 const closeMenu = () => { menuOpen.value = false }
+const scrollTop = () => {
+  menuOpen.value = false
+  window.scrollTo({ top: 0, behavior: 'smooth' })
+}
 </script>
 
 <style scoped>
-/* minimal scoped rules if needed */
+.logo { cursor: pointer }
 </style>

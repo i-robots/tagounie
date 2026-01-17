@@ -24,7 +24,7 @@
     <section class="gallery">
       <h2 class="section-title serif">Life in Tagounite</h2>
       <div class="gallery-grid">
-        <div class="gallery-item fade-in" v-for="n in 12" :key="n" @click="openLightbox(1 + n)" style="cursor: pointer;">
+        <div class="gallery-item fade-in" v-for="n in galleryCount" :key="n" @click="openLightbox(1 + n)" style="cursor: pointer;">
           <img :src="`images/WhatsApp_${1 + n}.jpeg`" :alt="`Tagounite desert experience ${n}`" loading="lazy">
         </div>
       </div>
@@ -47,7 +47,7 @@
       <h2 class="section-title serif">Location – Tagounite, Morocco</h2>
       <div class="location-content">
         <div>
-          <p>Tagounite is located in southern Morocco, near the Draa Valley, one of the most beautiful oasis regions in the country.</p>
+          <p>Our project is located in Tagounite, a peaceful village in southern Morocco, near the Drâa Valley. The area is known for its palm groves, desert landscapes, and warm local culture. Life here is calm, natural, and far away from big cities.</p>
           <ul style="margin-top: 1rem; padding-left: 1.5rem;">
             <li>Gateway to the Sahara Desert</li>
             <li>Authentic village life</li>
@@ -73,6 +73,35 @@
       </div>
     </section>
 
+    <section id="accommodation">
+      <h2 class="section-title serif">🛏️ Accommodation, Facilities & Safety</h2>
+      <div class="accom-columns fade-in">
+        <div class="section-cont">
+          <div class="accommodation-card">
+            <p style="font-size: larger; margin-bottom: 1rem;"><strong>Where will I sleep? Is it clean?</strong></p>
+            <p>Volunteers stay in our on-site hostel, located directly on the farm. The accommodation is simple, clean, and peaceful.</p>
+            <ul>
+              <li>Shared or private rooms (depending on availability)</li>
+              <li>Clean mattresses, blankets, and mosquito protection</li>
+              <li>Regular cleaning of rooms and common areas</li>
+            </ul>
+          </div>
+          <MedicalSection />
+        </div>
+        <div class="safety-card fade-in">
+          <p style="font-size: larger; margin-bottom: 1rem;"><strong>Is it safe for volunteers? Especially women?</strong></p>
+          <p style="margin-bottom: 1rem;">Safety is one of our top priorities. Tagounite is a quiet and traditional village where people know each other and look out for one another.</p>
+          <p>We regularly host solo female volunteers and women feel safe and respected here. The project is family-oriented, and there is zero tolerance for harassment or unsafe behavior.</p>
+          <ul>
+            <li>We clearly explain cultural norms</li>
+            <li>Provide guidance on clothing and local customs</li>
+            <li>Are always available if a volunteer feels uncomfortable</li>
+            <li>You will never be left alone in unsafe situations</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
     <!-- Who is it for -->
     <section class="who-for">
       <h2 class="section-title serif">Who This Experience Is For</h2>
@@ -84,16 +113,18 @@
       <p style="text-align: center; margin-top: 2rem; font-style: italic;">No special skills required — just curiosity and respect.</p>
     </section>
 
+    <IncludedSection />
+    <HostSection />
+
     <!-- Join Section -->
     <section id="join" class="join-section">
       <h2 class="section-title serif" style="color: white;">Join Us</h2>
       <div class="about-content" style="color: #ccc;">
         <p style="font-size: 1.5rem; margin-bottom: 1rem;">Come as a volunteer.</p>
-        <p style="font-size: 1.5rem; margin-bottom: 2rem;">Leave as family.</p>
-        <p>Apply via Worldpackers or contact us directly through the website.</p>
+        <p>Leave as family.</p>
       </div>
       <div style="margin-top: 1rem;">
-        <a href="https://www.worldpackers.com/search?q=Tagounite%2C+Morocco" target="_blank" class="cta-button" style="margin-right: 1rem;">Apply via Worldpackers</a>
+        <a href="mailto:info@tagounitedesert.life" class="cta-button" style="margin-right: 1rem;">Email Us</a>
         <button class="cta-button" @click="showContactForm = true" style="background: transparent; border: 2px solid var(--primary);">Contact Us</button>
       </div>
     </section>
@@ -106,7 +137,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import NavBar from './components/NavBar.vue'
 import HeroSection from './components/HeroSection.vue'
 import ExperienceSection from './components/ExperienceSection.vue'
@@ -114,6 +145,9 @@ import ActivitiesSection from './components/ActivitiesSection.vue'
 import ContactModal from './components/ContactModal.vue'
 import FooterSection from './components/FooterSection.vue'
 import ImageLightbox from './components/ImageLightbox.vue'
+import IncludedSection from './components/IncludedSection.vue'
+import HostSection from './components/HostSection.vue'
+import MedicalSection from './components/MedicalSection.vue'
 
 const showContactForm = ref(false)
 
@@ -128,6 +162,7 @@ const activityCategories = ref([
   {
     title: '🌿 Culture & Community',
     items: [
+      'Cultural exchange and language practice',
       'Moroccan Arabic (Darija) & Amazigh basics',
       'Storytelling evenings with locals',
       'Traditional music & drumming nights',
@@ -139,12 +174,13 @@ const activityCategories = ref([
   {
     title: '🌵 Nature & Sustainability',
     items: [
+      'Farm work (planting, watering, harvesting)',
+      'Helping with animals',
       'Desert ecology & oasis farming',
       'Permaculture & water-saving techniques',
       'Palm tree care & irrigation systems',
-      'Natural building (mud, clay, palm leaves)',
-      'Solar cooking & off-grid living',
-      'Waste reduction projects'
+      'Hostel support (cleaning, organizing, welcoming guests)',
+      'Gardening and eco-projects'
     ]
   },
   {
@@ -155,7 +191,7 @@ const activityCategories = ref([
       'Sunrise & sunset desert walks',
       'Sandboarding on dunes',
       'Desert meditation & breathwork',
-      'Yoga at sunrise/sunset'
+      'Yoga at sunrise/sunset',
     ]
   }
 ])
@@ -166,7 +202,9 @@ const uniqueExperiences = ref([
   { icon: '🔥', title: 'Campfire Story Evenings' },
   { icon: '🌴', title: 'Life in an Oasis Village' },
   { icon: '🧭', title: 'Learning from Nomadic Guides' },
-  { icon: '🌅', title: 'Sunrise Walks in Dunes' }
+  { icon: '🌅', title: 'Sunrise Walks in Dunes' },
+  { icon: '🍞', title:  'Natural building (mud, clay, palm leaves)' },
+  { icon: '🎶', title: 'Traditional Music & Drumming' }
 ])
 
 const travelSteps = ref([
@@ -182,13 +220,21 @@ const whoFor = ref([
   'Want to escape mass tourism',
   'Are open-minded and respectful',
   'Enjoy meaningful connections',
-  'Looking for peace, adventure and purpose'
+  'Looking for peace, adventure and purpose',
+  'Solar cooking & off-grid living',
+  'Visit most beautiful oasis regions'
 ])
 
 // showContactForm is handled by ContactModal via emits
 
   const lightboxVisible = ref(false)
   const lightboxIndex = ref(1)
+
+  // responsive gallery count: 14 when >1378px, otherwise 12
+  const galleryCount = ref(12)
+  const updateGalleryCount = () => {
+    galleryCount.value = window.innerWidth > 1377 ? 15 : 12
+  }
 
   const openLightbox = (index = 1) => {
     lightboxIndex.value = index
@@ -229,6 +275,9 @@ onMounted(() => {
 
   setPlaceholder()
   window.addEventListener('resize', setPlaceholder)
+  // keep gallery count in sync
+  updateGalleryCount()
+  window.addEventListener('resize', updateGalleryCount)
 
   const handleNav = () => {
     if (!navEl || !placeholder) return
@@ -244,5 +293,9 @@ onMounted(() => {
 
   handleNav()
   window.addEventListener('scroll', handleNav, { passive: true })
+})
+
+onUnmounted(() => {
+  window.removeEventListener('resize', updateGalleryCount)
 })
 </script>
