@@ -10,7 +10,6 @@
 </template>
 
 <script setup>
-import { defineProps, defineEmits } from 'vue'
 import BaseModal from './BaseModal.vue'
 import { useI18n } from 'vue-i18n'
 

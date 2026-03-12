@@ -7,7 +7,6 @@
 </template>
 
 <script setup>
-import { defineProps, defineEmits } from 'vue'
 import BaseModal from './BaseModal.vue'
 import ImageCarousel from './ImageCarousel.vue'
 

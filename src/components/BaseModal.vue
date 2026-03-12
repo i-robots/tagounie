@@ -11,8 +11,6 @@
 </template>
 
 <script setup>
-import { defineProps, defineEmits } from 'vue'
-
 const props = defineProps({ visible: { type: Boolean, default: false }, title: { type: String, default: '' } })
 const emit = defineEmits(['close'])
 
@@ -32,12 +30,10 @@ const emitClose = () => emit('close')
   backdrop-filter: blur(4px) saturate(120%);
 }
 .base-modal-inner {
-  background: #ffffff;
+  background: #ffffff80;
   color: #0b0b0b;
   padding: 1.5rem 1.75rem;
   border-radius: 12px;
-  max-width: 920px;
-  width: 100%;
   box-shadow: 0 10px 30px rgba(2,6,23,0.35);
   position: relative;
 }
